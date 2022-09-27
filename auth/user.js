@@ -5,6 +5,11 @@ const signOutLink = document.getElementById('sign-out-link');
 // make sure we have a user!
 // > Part C:
 //     - get the user (if there is one)
+const user = getUser();
+if (!user) {
+    const base = location.pathname === '/' ? './' : '../';
+    location.replace(`${base}auth/?redirectUrl=${encodeURIComponenet(location)}`);
+}
 //     - check if there is not a user and if so do the redirect
 //       redirect code: location.replace(`/auth/?redirectUrl=${encodeURIComponent(location)}`);
 
