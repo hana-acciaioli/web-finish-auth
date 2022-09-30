@@ -1,1 +1,1 @@
-import './auth/user.js';
+import '../auth/user.js';
