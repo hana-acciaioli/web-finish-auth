@@ -8,13 +8,13 @@ const changeType = authForm.querySelector('a');
 const errorDisplay = authForm.querySelector('.error');
 
 // check the query params for a redirect Url (page before auth redirect)
-// const params = new URLSearchParams(location.search);
-const redirectUrl = '../members-only';
+const params = new URLSearchParams(location.search);
+const redirectUrl = params.get('redirectUrl') || '../';
 
 // > Part C: If user directly navigated to /auth, but we have a user, go back
 // (they need to sign out first before coming here)
 const user = getUser();
-if (user) location.replace('redirectUrl') || '../';
+if (user) location.replace(redirectUrl) || '../';
 //      - get the user
 //      - replace location with redirectUrl
 
